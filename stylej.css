@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+body{
+    height: 100%;
+    background: rgba(192, 46, 13, 0.525);
+    
+}
+
+.container{
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    margin: 100px auto ;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: white;
+
+
+} 
+.heading h2{
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;     
+}
+.coin{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin: 32px auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+}
+.coin img{
+    width: 100%;
+}
+.tails, .heads{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.tails{
+    transform: rotateX(180deg);
+    margin-right: 30px;    
+}
+
+/*adding flip animation*/
+@keyframes spin-tails {
+    0%{
+    transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+
+@keyframes spin-heads {
+    0%{
+    transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+.stats{
+    display: flex;
+    font-size: 1.5em;
+    font-weight:lighter;
+    margin-left: 40px;
+    padding: 10px;
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    justify-content:space-between ;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.buttons :hover {
+    background: lightgoldenrodyellow;
+    color: goldenrod;
+    border: 0.5px solid whitesmoke;
+    
+}
+button{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+}
+#reset-button{
+    margin-right: 30px;
+    margin-top: 20px;
+    padding: 10px;
+
+}
+#flip-button{
+    margin-left: 40px;
+    margin-top: 20px;
+    padding: 10px;
+    
+}
+#flip-button:disabled{
+    background: #e1e0ee;
+    
+}
