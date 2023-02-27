@@ -48,6 +48,12 @@
             let i = Math.floor(Math.random() *2);
 
             coin.style.animation = "none";
+             
+             resetBtn.addEventListener("click", ()=>{
+                 heads=0;
+                 tails=0;
+                 updateStates();
+             });
  
             if(i) {
                 setTimeout(function(){
