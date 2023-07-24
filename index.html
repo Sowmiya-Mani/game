@@ -12,7 +12,7 @@
 
         <div class="heading"><h2>COIN TOSS GAME</h2></div>
 
-        <div class="coin" id="coin">
+        <div class="coin-container" id="coin">
            <div class="heads">
                 <img src="heads.jpg" alt="">
             </div>
@@ -36,7 +36,7 @@
 
     <script type="text/javascript">
 
-         let coin = document.querySelector(".coin");
+         let coin = document.querySelector(".coin-container");
          let flipBtn = document.querySelector("#flip-button");
          let resetBtn = document.querySelector("#reset-button");
 
@@ -55,8 +55,6 @@
                 }, 100);
                 heads++;
             }
-
-
             else {
                 setTimeout(function(){
                     coin.style.animation = "spin-tails 3s forwards";
@@ -68,13 +66,10 @@
          });
         
          function updateStats(){
-            document.querySelector("#heads-count").textContent = `Heads : 
-            ${heads}`;
-            document.querySelector("#tails-count").textContent = `Tails :
-             ${tails}`};
-          
+            document.querySelector("#heads-count").textContent = `Heads : ${heads}`;
+            document.querySelector("#tails-count").textContent = `Tails : ${tails}`;
+         }
         
-         
          function disableButton(){
             flipBtn.disabled = true;
             setTimeout(function(){
@@ -85,8 +80,11 @@
          resetBtn.addEventListener("click", ()=>{
                  heads=0;
                  tails=0;
-                 updateStates();
+                 updateStats();
              });
     </script>
 </body>
 </html>
+
+
+
